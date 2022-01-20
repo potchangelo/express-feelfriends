@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const port = 8484;
 
-app.get('/', (req, res) => {
-  res.send('สวัสดีหน้าแรก');
+app.get('/', (request, response) => {
+  response.send('สวัสดีหน้าแรก 555');
 });
 
 app.listen(port, () => {
