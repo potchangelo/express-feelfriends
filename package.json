@@ -1,0 +1,15 @@
+{
+  "name": "fewfriends",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Francesco Macaroni",
+  "license": "ISC",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
