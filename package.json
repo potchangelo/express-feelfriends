@@ -10,7 +10,8 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "hbs": "^4.2.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
