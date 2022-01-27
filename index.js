@@ -3,15 +3,16 @@ const app = express();
 const port = 8484;
 
 app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'hbs');
 
 app.get('/', (request, response) => {
   console.log(request.query);
   const { q, sortBy } = request.query;
-  response.send(`สวัสดีหน้าแรก 555 - ค้นหาคำว่า ${q}, เรียงลำดับจาก ${sortBy}`);
+  response.render('home', { q, sortBy });
 });
 
 app.get('/p/new', (request, response) => {
-  response.send('ฟอร์มสร้างโพสต์ใหม่');
+  response.render('postNew');
 });
 
 app.post('/p/new', (request, response) => {
@@ -23,7 +24,7 @@ app.post('/p/new', (request, response) => {
 app.get('/p/:postId', (request, response) => {
   console.log(request.params);
   const { postId } = request.params;
-  response.send(`สวัสดีหน้าโพสต์เดียว ID = ${postId}`);
+  response.render('postId', { postId });
 });
 
 app.listen(port, () => {
