@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> baseHead custom_title="โพสต์เดียว ID = {{postId}} | " }}
+{{> baseHead custom_title=custom_title }}
 <body>
   {{> siteHeader }}
-  <div>
-    <h2>สวัสดีหน้าโพสต์เดียว ID = {{ postId }}</h2>
-    <p>เนื้อหาข้างล่าง</p>
-  </div>
+  {{#if onePost}}
+    <div style="background-color: lavender;">
+      <h2>{{ onePost.title }}</h2>
+      <p>{{ onePost.createdAtText }}</p>
+    </div>
+  {{else}}
+    <p>ไม่พบโพสต์ที่คุณต้องการ</p>
+  {{/if}}
   {{> siteFooter }}
 </body>
 </html>

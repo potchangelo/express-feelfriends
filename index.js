@@ -3,15 +3,17 @@ const hbs = require('hbs');
 const app = express();
 const port = 8484;
 
-hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials');
 
+const allPosts = [
+  { id: 2, title: 'น่ารัก 2', createdAtText: '14 April 2022', commentsCount: 3 },
+  { id: 1, title: 'น่ารัก 1', createdAtText: '10 April 2022', commentsCount: 0 }
+];
 
 app.get('/', (request, response) => {
-  console.log(request.query);
-  const { q, sortBy } = request.query;
-  response.render('home', { q, sortBy });
+  response.render('home', { allPosts });
 });
 
 app.get('/p/new', (request, response) => {
@@ -27,7 +29,9 @@ app.post('/p/new', (request, response) => {
 app.get('/p/:postId', (request, response) => {
   console.log(request.params);
   const { postId } = request.params;
-  response.render('postId', { postId });
+  const onePost = allPosts.find(post => post.id === +postId);
+  const custom_title = onePost ? `${onePost.title} | ` : 'Not found | ';
+  response.render('postId', { custom_title, onePost });
 });
 
 app.listen(port, () => {
