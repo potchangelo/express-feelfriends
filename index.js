@@ -1,9 +1,12 @@
 const express = require('express');
+const hbs = require('hbs');
 const app = express();
 const port = 8484;
 
+hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
+
 
 app.get('/', (request, response) => {
   console.log(request.query);
