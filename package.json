@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "express": "^5.0.0-beta.1",
-    "hbs": "^4.2.0"
+    "hbs": "^4.2.0",
+    "knex": "^1.0.3",
+    "mysql2": "^2.3.3"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
