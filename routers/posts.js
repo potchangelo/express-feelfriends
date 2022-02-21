@@ -1,5 +1,5 @@
 const express = require('express');
-const allPosts = require('./samplePosts');
+const db = require('../db');
 
 const router = express.Router();
 
@@ -13,10 +13,19 @@ router.post('/new', (request, response) => {
   response.send(`Submit ฟอร์มสร้างโพสต์ใหม่แล้วจ้า title = ${title}`);
 });
 
-router.get('/:postId', (request, response) => {
+router.get('/:postId', async (request, response) => {
   console.log(request.params);
   const { postId } = request.params;
-  const onePost = allPosts.find(post => post.id === +postId);
+
+  let onePost = null;
+  try {
+    const somePosts = await db('post').select('*').where('id', +postId);
+    onePost = somePosts[0];
+  }
+  catch (error) {
+    console.error(error);
+  }
+
   const custom_title = onePost ? `${onePost.title} | ` : 'Not found | ';
   response.render('postId', { custom_title, onePost });
 });
