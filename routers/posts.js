@@ -19,7 +19,7 @@ router.get('/:postId', async (request, response) => {
 
   let onePost = null;
   try {
-    const somePosts = await db('post').select('*').where('id', +postId);
+    const somePosts = await db.select('*').from('post').where('id', +postId);
     onePost = somePosts[0];
   }
   catch (error) {
