@@ -17,7 +17,7 @@ app.get('/p/new', (request, response) => {
 
 app.post('/p/new', (request, response) => {
   console.log(request.body);
-  const { title } = request.body;
+  const { title } = request.body ?? {};
   response.send(`Submit ฟอร์มสร้างโพสต์ใหม่แล้วจ้า title = ${title}`);
 });
 
