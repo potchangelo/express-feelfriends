@@ -9,7 +9,7 @@
     {{#each allPosts}}
       <div style="background-color: lavender;">
         <h4><a href="/p/{{ this.id }}">{{ this.title }}</a></h4>
-        <p>{{ this.createdAtText }}</p>
+        <p>{{ this.createdAt }}</p>
         {{#if this.commentsCount}}
           <p>{{ this.commentsCount }} คอมเม้นท์</p>
         {{else}}
