@@ -10,7 +10,26 @@ router.get('/new', (request, response) => {
 
 router.post('/new', (request, response) => {
   console.log(request.body);
-  const { title } = request.body ?? {};
+  const { title, content, from, accepted } = request.body ?? {};
+  try {
+    if (!title || !content || !from) {
+      throw new Error('no content');
+    }
+    else if (accepted !== 'on') {
+      throw new Error('no accepted');
+    }
+
+  }
+  catch (error) {
+    let errorMessage = 'กรุณาตรวจสอบข้อมูลและลองใหม่';
+    if (error.message === 'no content') {
+      errorMessage = 'กรุณาใส่ข้อมูลให้ครบ';
+    }
+    else if (error.message === 'no accepted') {
+      errorMessage = 'กรุณาติ๊กถูกยอมรับ';
+    }
+    return response.render('postNew', { errorMessage, values: request.body });
+  }
   response.send(`Submit ฟอร์มสร้างโพสต์ใหม่แล้วจ้า title = ${title}`);
 });
 
