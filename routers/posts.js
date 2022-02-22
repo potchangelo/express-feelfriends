@@ -30,7 +30,11 @@ router.post('/new', (request, response) => {
     }
     return response.render('postNew', { errorMessage, values: request.body });
   }
-  response.send(`Submit ฟอร์มสร้างโพสต์ใหม่แล้วจ้า title = ${title}`);
+  response.redirect('/p/new/done');
+});
+
+router.get('/new/done', (request, response) => {
+  response.render('postNewDone');
 });
 
 router.get('/:postId', async (request, response) => {
