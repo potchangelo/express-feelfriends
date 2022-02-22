@@ -8,7 +8,7 @@
       <h2>{{ onePost.title }}</h2>
       <p>
         <b>{{ onePost.from }}</b>
-        <span> | {{ onePost.createdAt }}</span>
+        <span> | {{ onePost.createdAtText }}</span>
       </p>
       <p>{{ onePost.content }}</p>
     </div>
@@ -21,7 +21,7 @@
       <div style="background-color: rgb(249, 225, 229);">
         <p>
           <b>{{ this.from }}</b>
-          <span> | {{ this.createdAt }}</span>
+          <span> | {{ this.createdAtText }}</span>
         </p>
         <p>{{ this.content }}</p>
       </div>

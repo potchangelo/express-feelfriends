@@ -1,4 +1,5 @@
 const express = require('express');
+const dayjs = require('dayjs');
 const db = require('../db');
 
 const router = express.Router();
@@ -25,10 +26,15 @@ router.get('/:postId', async (request, response) => {
       .from('post')
       .where('id', +postId);
     onePost = somePosts[0];
+    onePost.createdAtText = dayjs(onePost.createdAt).format('D MMM YYYY - H:mm');
     postComments = await db
       .select('*')
       .from('comment')
       .where('postId', +postId);
+    postComments = postComments.map(comment => {
+      createdAtText = dayjs(comment.createdAt).format('D MMM YYYY - H:mm');
+      return { ...comment, createdAtText }
+    });
   }
   catch (error) {
     console.error(error);
