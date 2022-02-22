@@ -8,7 +8,7 @@ router.get('/new', (request, response) => {
   response.render('postNew');
 });
 
-router.post('/new', (request, response) => {
+router.post('/new', async (request, response) => {
   console.log(request.body);
   const { title, content, from, accepted } = request.body ?? {};
   try {
@@ -18,7 +18,9 @@ router.post('/new', (request, response) => {
     else if (accepted !== 'on') {
       throw new Error('no accepted');
     }
-
+    await db
+      .insert({ title, content, from, createdAt: new Date() })
+      .into('post');
   }
   catch (error) {
     let errorMessage = 'กรุณาตรวจสอบข้อมูลและลองใหม่';
