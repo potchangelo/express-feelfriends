@@ -6,11 +6,25 @@
   {{#if onePost}}
     <div style="background-color: lavender;">
       <h2>{{ onePost.title }}</h2>
-      <p>{{ onePost.createdAt }}</p>
+      <p>
+        <b>{{ onePost.from }}</b>
+        <span> | {{ onePost.createdAt }}</span>
+      </p>
       <p>{{ onePost.content }}</p>
     </div>
+    {{#if postComments}}
+      <h4>{{ postComments.length }} คอมเม้นท์</h4>
+    {{else}}
+      <h4>ยังไม่มีคอมเม้นท์นะ มาเปิดกันได้</h4>
+    {{/if}}
     {{#each postComments}}
-      <p>{{ this.content }}</p>
+      <div style="background-color: rgb(249, 225, 229);">
+        <p>
+          <b>{{ this.from }}</b>
+          <span> | {{ this.createdAt }}</span>
+        </p>
+        <p>{{ this.content }}</p>
+      </div>
     {{/each}}
   {{else}}
     <p>ไม่พบโพสต์ที่คุณต้องการ</p>
