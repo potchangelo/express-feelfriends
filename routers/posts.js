@@ -15,18 +15,20 @@ router.post('/new', (request, response) => {
 });
 
 router.get('/:postId', async (request, response) => {
-  console.log(request.params);
   const { postId } = request.params;
 
   let onePost = null;
   let postComments = [];
   try {
+    // Get post
     const somePosts = await db
       .select('*')
       .from('post')
       .where('id', +postId);
     onePost = somePosts[0];
     onePost.createdAtText = dayjs(onePost.createdAt).format('D MMM YYYY - H:mm');
+
+    // Get comments
     postComments = await db
       .select('*')
       .from('comment')
