@@ -9,6 +9,9 @@
       <p>{{ onePost.createdAt }}</p>
       <p>{{ onePost.content }}</p>
     </div>
+    {{#each postComments}}
+      <p>{{ this.content }}</p>
+    {{/each}}
   {{else}}
     <p>ไม่พบโพสต์ที่คุณต้องการ</p>
   {{/if}}

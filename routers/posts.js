@@ -18,16 +18,24 @@ router.get('/:postId', async (request, response) => {
   const { postId } = request.params;
 
   let onePost = null;
+  let postComments = [];
   try {
-    const somePosts = await db.select('*').from('post').where('id', +postId);
+    const somePosts = await db
+      .select('*')
+      .from('post')
+      .where('id', +postId);
     onePost = somePosts[0];
+    postComments = await db
+      .select('*')
+      .from('comment')
+      .where('postId', +postId);
   }
   catch (error) {
     console.error(error);
   }
 
   const custom_title = onePost ? `${onePost.title} | ` : 'Not found | ';
-  response.render('postId', { custom_title, onePost });
+  response.render('postId', { custom_title, onePost, postComments });
 });
 
 module.exports = router;
