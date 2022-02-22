@@ -7,7 +7,8 @@ const db = knex.default({
     password: 'password1234',
     host: '127.0.0.1',
     port: 3306,
-    database: 'express_fewfriends'
+    database: 'express_fewfriends',
+    timezone: 'utc'
   }
 });
 

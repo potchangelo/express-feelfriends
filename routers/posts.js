@@ -9,20 +9,23 @@ router.get('/new', (request, response) => {
 });
 
 router.post('/new', async (request, response) => {
-  console.log(request.body);
   const { title, content, from, accepted } = request.body ?? {};
   try {
+    // Validations
     if (!title || !content || !from) {
       throw new Error('no content');
     }
     else if (accepted !== 'on') {
       throw new Error('no accepted');
     }
+
+    // Create post
     await db
       .insert({ title, content, from, createdAt: new Date() })
       .into('post');
   }
   catch (error) {
+    console.error(error)
     let errorMessage = 'กรุณาตรวจสอบข้อมูลและลองใหม่';
     if (error.message === 'no content') {
       errorMessage = 'กรุณาใส่ข้อมูลให้ครบ';
