@@ -5,7 +5,25 @@
   {{> siteHeader }}
   <div>
     <h2>สร้างโพสต์ใหม่</h2>
-    <p>มีฟอร์มเว้ยเฮ้ย</p>
+    <p>ฝากถามเพื่อนๆได้เลย</p>
+    <form action="/p/new" method="post">
+      <p>
+        <input type="text" name="title" placeholder="หัวข้อ" />
+      </p>
+      <p>
+        <textarea name="content" placeholder="เนื้อหา"></textarea>
+      </p>
+      <p>
+        <input type="text" name="from" placeholder="จากคุณ" />
+      </p>
+      <p>
+        <input type="checkbox" name="accepted" />
+        <label> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ</label>
+      </p>
+      <p>
+        <button type="submit">สร้างโพสต์</button>
+      </p>
+    </form>
   </div>
   {{> siteFooter }}
 </body>
