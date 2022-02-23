@@ -20,7 +20,8 @@ async function getPostPageData(postId) {
     postComments = await db
       .select('*')
       .from('comment')
-      .where('postId', +postId);
+      .where('postId', +postId)
+      .orderBy('id', 'asc');
     postComments = postComments.map(comment => {
       createdAtText = dayjs(comment.createdAt).format('D MMM YYYY - H:mm');
       return { ...comment, createdAtText };
@@ -63,7 +64,7 @@ router.post('/new', async (request, response) => {
     else if (error.message === 'no accepted') {
       errorMessage = 'กรุณาติ๊กถูกยอมรับ';
     }
-    return response.render('postNew', { errorMessage, values: request.body });
+    return response.render('postNew', { errorMessage, values: { title, content, from } });
   }
   response.redirect('/p/new/done');
 });
@@ -92,7 +93,7 @@ router.post('/:postId/comment', async (request, response) => {
     }
 
     // Create comment
-    await db.insert({ content, from, postId }).into('comment');
+    await db.insert({ content, from, createdAt: new Date(), postId }).into('comment');
   }
   catch (error) {
     // Error message
