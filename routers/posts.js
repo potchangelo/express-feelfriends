@@ -108,10 +108,8 @@ router.post('/:postId/comment', async (request, response) => {
 
     // Get post and comments
     const postPageData = await getPostPageData(postId);
-    postPageData.errorMessage = errorMessage;
-    postPageData.commentValues = { content, from };
 
-    return response.render('postId', postPageData);
+    return response.render('postId', { ...postPageData, errorMessage, commentValues: { content, from } });
   }
 
   response.redirect(`/p/${postId}`);
