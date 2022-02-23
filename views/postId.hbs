@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> baseHead custom_title=custom_title }}
+{{> baseHead customTitle=customTitle }}
 <body>
   {{> siteHeader }}
   {{#if onePost}}
@@ -12,6 +12,26 @@
       </p>
       <p>{{ onePost.content }}</p>
     </div>
+    <hr>
+    <form action="/p/{{ onePost.id }}/comment" method="post">
+      <p>
+        <textarea name="content" placeholder="แสดงความคิดเห็น">{{ commentValues.content }}</textarea>
+      </p>
+      <p>
+        <input type="text" name="from" placeholder="จากคุณ" value="{{ commentValues.from }}">
+      </p>
+      <p>
+        <input id="input-accepted" type="checkbox" name="accepted">
+        <label for="input-accepted"> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ</label>
+      </p>
+      <p>
+        <button type="submit">คอมเม้นท์</button>
+      </p>
+      {{#if errorMessage }}
+        <p>*** {{ errorMessage }}</p>
+      {{/if}}
+    </form>
+    <hr>
     {{#if postComments}}
       <h4>{{ postComments.length }} คอมเม้นท์</h4>
     {{else}}
