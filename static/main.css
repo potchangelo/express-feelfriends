@@ -191,3 +191,23 @@ input[type='text']:focus, textarea:focus {
   text-align: center;
   padding: 12px;
 }
+
+/* Scroll top */
+.scroll-top {
+  color: #888888;
+  background-color: white;
+  border: 1px solid #888888;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
