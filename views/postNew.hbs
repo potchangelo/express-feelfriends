@@ -3,31 +3,33 @@
 {{> baseHead customTitle='สร้างโพสต์ใหม่ | ' }}
 <body>
   {{> siteHeader }}
-  <div>
-    <h2>สร้างโพสต์ใหม่</h2>
-    <p>ฝากถามเพื่อนๆได้เลย</p>
-    <form action="/p/new" method="post">
-      <p>
-        <input type="text" name="title" placeholder="หัวข้อ" value="{{ values.title }}" />
-      </p>
-      <p>
-        <textarea name="content" placeholder="เนื้อหา">{{ values.content }}</textarea>
-      </p>
-      <p>
-        <input type="text" name="from" placeholder="จากคุณ" value="{{ values.from }}" />
-      </p>
-      <p>
-        <input id="input-accepted" type="checkbox" name="accepted" />
-        <label for="input-accepted"> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ</label>
-      </p>
-      <p>
-        <button type="submit">สร้างโพสต์</button>
-      </p>
-      {{#if errorMessage }}
-        <p>*** {{ errorMessage }}</p>
-      {{/if}}
-    </form>
-  </div>
+  <section class="section">
+    <div class="container">
+      <h3>สร้างโพสต์ใหม่</h3>
+      <p class="mg-bt-l">ฝากถามเพื่อนๆได้เลย</p>
+      <form action="/p/new" method="post">
+        <p>
+          <input type="text" name="title" placeholder="หัวข้อ" value="{{ values.title }}" />
+        </p>
+        <p>
+          <textarea name="content" placeholder="เนื้อหา">{{ values.content }}</textarea>
+        </p>
+        <p>
+          <input type="text" name="from" placeholder="จากคุณ" value="{{ values.from }}" />
+        </p>
+        <p>
+          <input id="input-accepted" type="checkbox" name="accepted" />
+          <label for="input-accepted"> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ</label>
+        </p>
+        <p>
+          <button class="button" type="submit">สร้างโพสต์</button>
+        </p>
+        {{#if errorMessage }}
+          <p>*** {{ errorMessage }}</p>
+        {{/if}}
+      </form>
+    </div>
+  </section>
   {{> siteFooter }}
 </body>
 </html>
