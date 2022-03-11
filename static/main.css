@@ -193,7 +193,7 @@ input[type='text']:focus, textarea:focus {
 }
 
 /* Scroll top */
-.scroll-top {
+.scroll-top-button {
   color: #888888;
   background-color: white;
   border: 1px solid #888888;
