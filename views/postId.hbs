@@ -17,7 +17,7 @@
         <hr>
         <form action="/p/{{ onePost.id }}/comment" method="post">
           <p>
-            <textarea name="content" placeholder="แสดงความคิดเห็น">{{ commentValues.content }}</textarea>
+            <textarea name="content" placeholder="แสดงความคิดเห็น" rows="3">{{ commentValues.content }}</textarea>
           </p>
           <p>
             <input type="text" name="from" placeholder="จากคุณ" value="{{ commentValues.from }}">
@@ -27,7 +27,7 @@
             <label for="input-accepted"> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ</label>
           </p>
           <p>
-            <button type="submit">คอมเม้นท์</button>
+            <button class="button" type="submit">คอมเม้นท์</button>
           </p>
           {{#if errorMessage }}
             <p>*** {{ errorMessage }}</p>

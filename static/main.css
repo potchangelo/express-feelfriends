@@ -24,6 +24,7 @@
 }
 
 html {
+  color: #333333;
   font-family: 'Mali', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -98,7 +99,37 @@ hr {
   margin-right: auto;
 }
 
+.box {
+  background-color: white;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+/* Form */
+input[type='text'], textarea {
+  appearance: none;
+  color: #333333;
+  background-color: white;
+  border: 1px solid #888888;
+  border-radius: 4px;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
+
+input[type='text'] {
+  height: 35px;
+}
+
+input[type='text']:focus, textarea:focus {
+  border: 1px solid #22a932;
+}
+
 .button {
+  appearance: none;
   color: white;
   background-color: #23C736;
   border: 1px solid #23C736;
@@ -107,6 +138,7 @@ hr {
   display: inline-block;
   padding: 6px 12px;
   transition: all 300ms ease-out;
+  cursor: pointer;
 }
 
 .button.button-outlined {
@@ -118,14 +150,6 @@ hr {
   color: white;
   background-color: #22a932;
   border: 1px solid #22a932;
-}
-
-.box {
-  background-color: white;
-  border: 1px solid #CCCCCC;
-  border-radius: 8px;
-  margin-bottom: 16px;
-  padding: 10px;
 }
 
 /* Site header */
