@@ -111,3 +111,11 @@ a {
   color: #111111;
   font-weight: 500;
 }
+
+/* Site footer */
+.site-footer {
+  background-color: white;
+  border-top: 1px solid #CCCCCC;
+  text-align: center;
+  padding: 12px;
+}
