@@ -18,7 +18,54 @@
     url('fonts/mali-v7-thai_latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* General */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Mali', sans-serif;
   font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111111;
+  font-weight: 500;
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  color: #333333;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+a {
+  color: #22a932;
 }
