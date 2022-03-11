@@ -73,6 +73,12 @@ a {
   color: #22a932;
 }
 
+hr {
+  border: 1px dashed #CCCCCC;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
 .mg-bt-l {
   margin-bottom: 32px;
 }
