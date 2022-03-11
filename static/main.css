@@ -25,6 +25,7 @@
 
 html {
   font-family: 'Mali', sans-serif;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -68,4 +69,45 @@ p {
 
 a {
   color: #22a932;
+}
+
+.button {
+  color: white;
+  background-color: #23C736;
+  border: 1px solid #23C736;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 12px;
+}
+
+/* Site header */
+.site-header {
+  background-color: white;
+  border-bottom: 1px solid #CCCCCC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+}
+
+.site-header-item {
+  padding: 0px 12px;
+}
+
+.site-header-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.site-header-logo img {
+  display: inline-block;
+  height: 35px;
+  margin-right: 8px;
+}
+
+.site-header-logo span {
+  color: #111111;
+  font-weight: 500;
 }
