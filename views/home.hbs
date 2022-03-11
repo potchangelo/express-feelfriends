@@ -3,24 +3,26 @@
 {{> baseHead }}
 <body>
   {{> siteHeader }}
-  <div>
-    <h2>สวัสดีฟีวเฟรนด์ส</h2>
-    <p>วันนีเพือนมีอะไรจะฝากถาม ...</p>
-    {{#each allPosts}}
-      <div style="background-color: lavender;">
-        <h4><a href="/p/{{ this.id }}">{{ this.title }}</a></h4>
-        <p>
-          <b>{{ this.from }}</b>
-          <span> | {{ this.createdAtText }}</span>
-        </p>
-        {{#if this.commentsCount}}
-          <p>{{ this.commentsCount }} คอมเม้นท์</p>
-        {{else}}
-          <p>ยังไม่มีคอมเม้นท์นะ มาเปิดกันได้</p>
-        {{/if}}
-      </div>
-    {{/each}}
-  </div>
+  <section class="section">
+    <div class="container">
+      <h3>สวัสดีฟีวเฟรนด์ส</h3>
+      <p class="mg-bt-l">วันนีเพือนมีอะไรจะฝากถาม ...</p>
+      {{#each allPosts}}
+        <div class="box">
+          <h5><a href="/p/{{ this.id }}">{{ this.title }}</a></h5>
+          <p>
+            <b>{{ this.from }}</b>
+            <span class="text-gray"> | {{ this.createdAtText }}</span>
+          </p>
+          {{#if this.commentsCount}}
+            <div>{{ this.commentsCount }} คอมเม้นท์</div>
+          {{else}}
+            <div>ยังไม่มีคอมเม้นท์นะ มาเปิดกันได้</div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </section>
   {{> siteFooter }}
 </body>
 </html>

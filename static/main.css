@@ -25,50 +25,71 @@
 
 html {
   font-family: 'Mali', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #111111;
   font-weight: 500;
+  line-height: 1.4;
   margin-top: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 h1 {
-  font-size: 26px;
-}
-
-h2 {
   font-size: 24px;
 }
 
-h3 {
+h2 {
   font-size: 22px;
 }
 
-h4 {
+h3 {
   font-size: 20px;
 }
 
-h5 {
+h4 {
   font-size: 18px;
 }
 
-h6 {
+h5 {
   font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
 }
 
 p {
   color: #333333;
   font-weight: 400;
+  line-height: 1.6;
   margin-top: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 a {
   color: #22a932;
+}
+
+.mg-bt-l {
+  margin-bottom: 32px;
+}
+
+.text-gray {
+  color: #888888;
+}
+
+.section {
+  min-height: calc(100vh - 100px);
+  padding: 32px 12px;
+}
+
+.container {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button {
@@ -79,6 +100,14 @@ a {
   text-decoration: none;
   display: inline-block;
   padding: 6px 12px;
+}
+
+.box {
+  background-color: white;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 10px;
 }
 
 /* Site header */
@@ -109,6 +138,7 @@ a {
 
 .site-header-logo span {
   color: #111111;
+  font-size: 16px;
   font-weight: 500;
 }
 
