@@ -74,6 +74,10 @@ a {
   color: #22a932;
 }
 
+b {
+  font-weight: 500;
+}
+
 hr {
   border: 1px dashed #CCCCCC;
   margin-top: 24px;
