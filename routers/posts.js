@@ -14,7 +14,7 @@ async function getPostPageData(postId) {
       .from('post')
       .where('id', +postId);
     onePost = somePosts[0];
-    onePost.createdAtText = dayjs(onePost.createdAt).format('D MMM YYYY - H:mm');
+    onePost.createdAtText = dayjs.tz(onePost.createdAt).format('D MMM YYYY - H:mm');
 
     // Get comments
     postComments = await db
@@ -23,7 +23,7 @@ async function getPostPageData(postId) {
       .where('postId', +postId)
       .orderBy('id', 'asc');
     postComments = postComments.map(comment => {
-      createdAtText = dayjs(comment.createdAt).format('D MMM YYYY - H:mm');
+      createdAtText = dayjs.tz(comment.createdAt).format('D MMM YYYY - H:mm');
       return { ...comment, createdAtText };
     });
   }

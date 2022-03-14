@@ -11,7 +11,6 @@ const postsRouter = require('./routers/posts');
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault('Asia/Bangkok');
-// dayjs.tz.setDefault('America/Toronto');
 
 const app = express();
 const port = process.env.APP_PORT ?? process.env.PORT;
