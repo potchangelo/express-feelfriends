@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const hbs = require('hbs');
 require('./db');
@@ -5,7 +6,7 @@ const generalRouter = require('./routers/general');
 const postsRouter = require('./routers/posts');
 
 const app = express();
-const port = 8484;
+const port = process.env.APP_PORT ?? 8765;
 
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
