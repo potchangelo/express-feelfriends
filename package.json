@@ -5,10 +5,6 @@
   "main": "index.js",
   "author": "Potchara Puttawanchai",
   "license": "ISC",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
   "dependencies": {
     "dayjs": "^1.10.7",
     "dotenv": "^16.0.0",
@@ -20,5 +16,12 @@
   "devDependencies": {
     "@types/node": "^17.0.10",
     "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   }
 }
