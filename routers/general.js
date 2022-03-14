@@ -15,7 +15,7 @@ router.get('/', async (request, response) => {
       .groupBy('post.id')
       .orderBy('post.id', 'desc');
     allPosts = allPosts.map(onePost => {
-      createdAtText = dayjs(onePost.createdAt).format('D MMM YYYY - H:mm');
+      createdAtText = dayjs.tz(onePost.createdAt).format('D MMM YYYY - H:mm');
       return { ...onePost, createdAtText };
     });
   }
