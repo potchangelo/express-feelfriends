@@ -1,4 +1,4 @@
-console.log('FewFriends');
+console.log('FeelFriends');
 
 const scrollTopButton = document.querySelector('.scroll-top-button');
 
