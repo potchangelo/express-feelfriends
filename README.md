@@ -1,8 +1,8 @@
 # Express FeelFriends
 
-https://express-fewfriends.herokuapp.com/
+https://express-feelfriends.herokuapp.com/
 
-ตัวอย่างโปรเจ็ค Express จากคลิป "สอน Express เบื้องต้น จนใช้ได้จริง #1" ของ Zinglecode
+ตัวอย่างโปรเจ็ค Express จากคลิป "สอน Express เบื้องต้น จนใช้ได้จริง # 1" ของ Zinglecode
 
 Note: ทำขึ้นมาเพื่อการศึกษาทางการเขียนโปรแกรมเท่านั้น เนื้อหาบนเว็บไม่ใช่สินค้าหรือบริการที่มีอยู่จริง
 
@@ -39,21 +39,21 @@ npm run dev
 
 ## Github branches for each lessons
 
-1. [Setup and Run](https://github.com/potchangelo/django-junraider/tree/01-setup)
-2. [Projects x Apps](https://github.com/potchangelo/django-junraider/tree/02-project-apps)
-3. [urls x views](https://github.com/potchangelo/django-junraider/tree/03-urls-views)
-4. [views x templates](https://github.com/potchangelo/django-junraider/tree/04-views-templates)
-5. [templates x tags](https://github.com/potchangelo/django-junraider/tree/05-templates-tags)
-6. [templates x filters](https://github.com/potchangelo/django-junraider/tree/06-templates-filters)
-7. [models x migrations](https://github.com/potchangelo/django-junraider/tree/07-models-migrations)
-8. [models](https://github.com/potchangelo/django-junraider/tree/08-models)
-9. [models x views x templates](https://github.com/potchangelo/django-junraider/tree/09-models-views-templates)
-10. [forms x views x templates](https://github.com/potchangelo/django-junraider/tree/10-forms-views-templates)
+1. [Setup and Run](https://github.com/potchangelo/express-feelfriends/tree/01-setup)
+2. [Routes](https://github.com/potchangelo/express-feelfriends/tree/02-routes)
+3. [Templates](https://github.com/potchangelo/express-feelfriends/tree/03-templates)
+4. [Handlebars](https://github.com/potchangelo/express-feelfriends/tree/04-handlebars)
+5. [Routers](https://github.com/potchangelo/express-feelfriends/tree/05-routers)
+6. [MySQL](https://github.com/potchangelo/express-feelfriends/tree/06-mysql)
+7. [Forms](https://github.com/potchangelo/express-feelfriends/tree/07-forms)
+8. [Static](https://github.com/potchangelo/express-feelfriends/tree/08-static)
+9. [Dotenv](https://github.com/potchangelo/express-feelfriends/tree/09-dotenv)
+10. [Deploy to Heroku](https://github.com/potchangelo/express-feelfriends/tree/10-deploy-heroku)
 
-- [Branch ของเว็บพรีวิว](https://github.com/potchangelo/django-junraider/tree/preview) -> จะมีการปรับแต่งโค้ดนิดนึงให้ใช้งานบน Host อย่างเหมาะสม
+- [Branch ของเว็บพรีวิว](https://github.com/potchangelo/express-feelfriends/tree/preview) -> จะมีการปรับแต่งโค้ดนิดนึงให้ใช้งานบน Host อย่างเหมาะสม
 
 
 ## Credits
 
-รูปยิ้ม
+https://www.iconfinder.com/icons/8708735/emoji_lol_teeth_smile_icon
 
