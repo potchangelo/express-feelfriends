@@ -64,7 +64,9 @@ router.post('/new', async (request, response) => {
     else if (error.message === 'no accepted') {
       errorMessage = 'กรุณาติ๊กถูกยอมรับ';
     }
-    return response.render('postNew', { errorMessage, values: { title, content, from } });
+    return response.render('postNew', {
+      errorMessage, values: { title, content, from }
+    });
   }
   response.redirect('/p/new/done');
 });
@@ -93,7 +95,9 @@ router.post('/:postId/comment', async (request, response) => {
     }
 
     // Create comment
-    await db.insert({ content, from, createdAt: new Date(), postId }).into('comment');
+    await db
+      .insert({ content, from, createdAt: new Date(), postId })
+      .into('comment');
   }
   catch (error) {
     // Error message
@@ -109,7 +113,9 @@ router.post('/:postId/comment', async (request, response) => {
     // Get post and comments
     const postPageData = await getPostPageData(postId);
 
-    return response.render('postId', { ...postPageData, errorMessage, commentValues: { content, from } });
+    return response.render('postId', {
+      ...postPageData, errorMessage, commentValues: { content, from }
+    });
   }
 
   response.redirect(`/p/${postId}`);
