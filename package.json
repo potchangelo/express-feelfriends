@@ -1,10 +1,23 @@
 {
   "name": "feelfriends",
   "version": "0.1.0",
-  "description": "",
+  "description": "ตัวอย่างโปรเจ็ค Express จากคลิป 'สอน Express เบื้องต้น จนใช้ได้จริง #1' ของ Zinglecode",
+  "keywords": [
+    "express",
+    "handlebars",
+    "mysql"
+  ],
   "main": "index.js",
   "author": "Potchara Puttawanchai",
-  "license": "ISC",
+  "homepage": "https://express-feelfriends.herokuapp.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/potchangelo/express-feelfriends"
+  },
+  "bugs": {
+    "url": "https://github.com/potchangelo/express-feelfriends/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "dayjs": "^1.11.0",
     "dotenv": "^16.0.0",
