@@ -1,6 +1,6 @@
 {
   "name": "feelfriends",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ตัวอย่างโปรเจ็ค Express จากคลิป 'สอน Express เบื้องต้น จนใช้ได้จริง #1' ของ Zinglecode",
   "keywords": [
     "express",
