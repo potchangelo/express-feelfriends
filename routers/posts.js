@@ -2,6 +2,8 @@ const express = require('express');
 const dayjs = require('dayjs');
 const db = require('../db');
 
+const allowedContents = ['แอปเปิ้ล', 'มะละกอ', 'กล้วย', 'ส้ม'];
+
 const router = express.Router();
 
 async function getPostPageData(postId) {
@@ -42,12 +44,15 @@ router.get('/new', (request, response) => {
 router.post('/new', async (request, response) => {
   const { title, content, from, accepted } = request.body ?? {};
   try {
-    // Validations
+    // Validations (For preview)
     if (!title || !content || !from) {
       throw new Error('no content');
     }
     else if (accepted !== 'on') {
       throw new Error('no accepted');
+    }
+    else if (!allowedContents.includes(title) || !allowedContents.includes(content) || !allowedContents.includes(from)) {
+      throw new Error('no match');
     }
 
     // Create post
@@ -63,6 +68,9 @@ router.post('/new', async (request, response) => {
     }
     else if (error.message === 'no accepted') {
       errorMessage = 'กรุณาติ๊กถูกยอมรับ';
+    }
+    else if (error.message === 'no match') {
+      errorMessage = `บนเว็บตัวอย่างนี้ใส่ข้อมูลได้แค่ ${allowedContents.join(',')} เท่านั้น`;
     }
     return response.render('postNew', {
       errorMessage, values: { title, content, from }
@@ -86,12 +94,15 @@ router.post('/:postId/comment', async (request, response) => {
   const { content, from, accepted } = request.body ?? {};
 
   try {
-    // Validations
+    // Validations (For preview)
     if (!content || !from) {
       throw new Error('no content');
     }
     else if (accepted !== 'on') {
       throw new Error('no accepted');
+    }
+    else if (!allowedContents.includes(content) || !allowedContents.includes(from)) {
+      throw new Error('no match');
     }
 
     // Create comment
@@ -108,6 +119,9 @@ router.post('/:postId/comment', async (request, response) => {
     }
     else if (error.message === 'no accepted') {
       errorMessage = 'กรุณาติ๊กถูกยอมรับ';
+    }
+    else if (error.message === 'no match') {
+      errorMessage = `บนเว็บตัวอย่างนี้ใส่ข้อมูลได้แค่ ${allowedContents.join(',')} เท่านั้น`;
     }
 
     // Get post and comments
