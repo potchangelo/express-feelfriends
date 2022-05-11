@@ -9,7 +9,7 @@ Note: ทำขึ้นมาเพื่อการศึกษาทาง�
 
 ## YouTube video
 
-zzzz
+https://www.youtube.com/watch?v=FvhM986U1_8
 
 
 ## Install and Run project by VSCode
