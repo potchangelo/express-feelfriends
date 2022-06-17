@@ -28,13 +28,12 @@ async function getPostPageData(postId) {
       createdAtText = dayjs.tz(comment.createdAt).format('D MMM YYYY - H:mm');
       return { ...comment, createdAtText };
     });
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   }
 
   const customTitle = onePost ? `${onePost.title} | ` : 'Not found | ';
-  return { onePost, postComments, customTitle }
+  return { onePost, postComments, customTitle };
 }
 
 router.get('/new', (request, response) => {
@@ -47,33 +46,31 @@ router.post('/new', async (request, response) => {
     // Validations (For preview)
     if (!title || !content || !from) {
       throw new Error('no content');
-    }
-    else if (accepted !== 'on') {
+    } else if (accepted !== 'on') {
       throw new Error('no accepted');
-    }
-    else if (!allowedContents.includes(title) || !allowedContents.includes(content) || !allowedContents.includes(from)) {
+    } else if (
+      !allowedContents.includes(title) ||
+      !allowedContents.includes(content) ||
+      !allowedContents.includes(from)
+    ) {
       throw new Error('no match');
     }
 
     // Create post
-    await db
-      .insert({ title, content, from, createdAt: new Date() })
-      .into('post');
-  }
-  catch (error) {
-    console.error(error)
+    await db.insert({ title, content, from, createdAt: new Date() }).into('post');
+  } catch (error) {
+    console.error(error);
     let errorMessage = 'กรุณาตรวจสอบข้อมูลและลองใหม่';
     if (error.message === 'no content') {
       errorMessage = 'กรุณาใส่ข้อมูลให้ครบ';
-    }
-    else if (error.message === 'no accepted') {
+    } else if (error.message === 'no accepted') {
       errorMessage = 'กรุณาติ๊กถูกยอมรับ';
-    }
-    else if (error.message === 'no match') {
+    } else if (error.message === 'no match') {
       errorMessage = `บนเว็บตัวอย่างนี้ใส่ข้อมูลได้แค่ ${allowedContents.join(',')} เท่านั้น`;
     }
     return response.render('postNew', {
-      errorMessage, values: { title, content, from }
+      errorMessage,
+      values: { title, content, from },
     });
   }
   response.redirect('/p/new/done');
@@ -97,30 +94,23 @@ router.post('/:postId/comment', async (request, response) => {
     // Validations (For preview)
     if (!content || !from) {
       throw new Error('no content');
-    }
-    else if (accepted !== 'on') {
+    } else if (accepted !== 'on') {
       throw new Error('no accepted');
-    }
-    else if (!allowedContents.includes(content) || !allowedContents.includes(from)) {
+    } else if (!allowedContents.includes(content) || !allowedContents.includes(from)) {
       throw new Error('no match');
     }
 
     // Create comment
-    await db
-      .insert({ content, from, createdAt: new Date(), postId })
-      .into('comment');
-  }
-  catch (error) {
+    await db.insert({ content, from, createdAt: new Date(), postId }).into('comment');
+  } catch (error) {
     // Error message
     console.error(error);
     let errorMessage = 'กรุณาตรวจสอบข้อมูลและลองใหม่';
     if (error.message === 'no content') {
       errorMessage = 'กรุณาใส่ข้อมูลให้ครบ';
-    }
-    else if (error.message === 'no accepted') {
+    } else if (error.message === 'no accepted') {
       errorMessage = 'กรุณาติ๊กถูกยอมรับ';
-    }
-    else if (error.message === 'no match') {
+    } else if (error.message === 'no match') {
       errorMessage = `บนเว็บตัวอย่างนี้ใส่ข้อมูลได้แค่ ${allowedContents.join(',')} เท่านั้น`;
     }
 
@@ -128,7 +118,9 @@ router.post('/:postId/comment', async (request, response) => {
     const postPageData = await getPostPageData(postId);
 
     return response.render('postId', {
-      ...postPageData, errorMessage, commentValues: { content, from }
+      ...postPageData,
+      errorMessage,
+      commentValues: { content, from },
     });
   }
 
