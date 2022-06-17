@@ -18,8 +18,7 @@ router.get('/', async (request, response) => {
       createdAtText = dayjs.tz(onePost.createdAt).format('D MMM YYYY - H:mm');
       return { ...onePost, createdAtText };
     });
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   }
   response.render('home', { allPosts });

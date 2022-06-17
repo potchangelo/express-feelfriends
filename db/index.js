@@ -8,8 +8,8 @@ const db = knex.default({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
-    timezone: '+00:00'
-  }
+    timezone: '+00:00',
+  },
 });
 
 console.log('รันรอบเดียวตอน Start app');

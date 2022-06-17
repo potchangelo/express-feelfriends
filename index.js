@@ -26,8 +26,7 @@ app.use('/p', postsRouter);
 app.listen(port, () => {
   if (process.env.NODE_ENV === 'production') {
     console.log(`เย้เฮ่ ${port}`);
-  }
-  else {
+  } else {
     console.log(`มาค่ะ http://localhost:${port}`);
   }
 });
