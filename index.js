@@ -22,8 +22,8 @@ app.use('/static', express.static('static'));
 
 app.use('/', generalRouter);
 app.use('/p', postsRouter);
-
-app.listen(port, () => {
+console.log(port, '0.0.0.0');
+app.listen(port, '0.0.0.0', () => {
   if (process.env.NODE_ENV === 'production') {
     console.log(`เย้เฮ่ ${port}`);
   } else {
