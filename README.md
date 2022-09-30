@@ -6,6 +6,8 @@ https://express-feelfriends.alwaysdata.net/
 
 Note: ทำขึ้นมาเพื่อการศึกษาทางการเขียนโปรแกรมเท่านั้น เนื้อหาบนเว็บไม่ใช่สินค้าหรือบริการที่มีอยู่จริง
 
+(Update 30/9/2022) ย้าย Hosting ของเว็บพรีวิว จาก Heroku ไปยัง alwaysdata เนื่องจาก Heroku ยกเลิก Free tier ครับ
+
 
 ## YouTube video
 
