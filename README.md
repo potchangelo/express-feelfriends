@@ -1,6 +1,6 @@
 # Express FeelFriends
 
-https://express-feelfriends.herokuapp.com/
+https://express-feelfriends.alwaysdata.net/
 
 ตัวอย่างโปรเจ็ค Express จากคลิป "สอน Express เบื้องต้น จนใช้ได้จริง # 1" ของ Zinglecode
 
