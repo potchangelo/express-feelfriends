@@ -12,6 +12,16 @@ Note: ทำขึ้นมาเพื่อการศึกษาทาง�
 https://www.youtube.com/watch?v=FvhM986U1_8
 
 
+
+## Setup database table
+
+![post table structure](https://raw.githubusercontent.com/potchangelo/express-feelfriends/main/snapshots/db-table-post-structure.jpg "post table structure")
+*post table structure*
+
+![comment table structure](https://raw.githubusercontent.com/potchangelo/express-feelfriends/main/snapshots/db-table-comment-structure.jpg "comment table structure")
+*comment table structure*
+
+
 ## Install and Run project by VSCode
 
 0. ติดตั้ง Node.js, MySQL, MySQLWorkbench ลงเครื่องให้เรียบร้อยก่อน
@@ -56,5 +66,6 @@ npm run dev
 ## Credits
 
 https://unsplash.com/photos/J85dU7QSdMc
+
 https://www.iconfinder.com/icons/8708735/emoji_lol_teeth_smile_icon
 
